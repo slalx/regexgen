@@ -1,6 +1,6 @@
 # regexgen
 
-Generates regular expressions that match a set of strings.
+通过想匹配的字符串自动生成正则表达式
 
 ## Installation
 
@@ -10,9 +10,15 @@ Generates regular expressions that match a set of strings.
 npm install regexgen
 ```
 
+或者
+```
+把build文件中的打包文件直接通过script标签引用
+```
+
+
 ## Example
 
-The simplest use is to simply pass an array of strings to `regexgen`:
+最简单的用法就是为regexgen传入一个要匹配字符串的数组
 
 ```javascript
 const regexgen = require('regexgen');
@@ -31,6 +37,22 @@ t.add('foobaz');
 
 t.toRegExp(); // => /fooba[rz]/
 ```
+可以在浏览器中直接使用
+
+```javascript
+<html>
+    <head>
+        <script src="../build/regexgen.js"></script>
+    </head>
+    <body>
+        <script>
+            console.log(regexgen(['foobar', 'foobaz', 'foozap', 'fooza']))
+        </script>
+    </body>
+</html>
+
+```
+
 
 ## CLI
 
